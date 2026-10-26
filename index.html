@@ -1,4 +1,4 @@
-       <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -180,5 +180,187 @@
 
     .message {
       text-align: center;
-      padding: 90px 
-  
+      padding: 90px 20px;
+      background: linear-gradient(135deg, #102b46, #263b52);
+    }
+
+    .message h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .message p {
+      color: #d4dce7;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background-color: #0b1220;
+      color: #9ca9ba;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 420px;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>HIROTO.</h2>
+
+    <nav>
+      <a href="#profile">PROFILE</a>
+      <a href="#winter">WINTER</a>
+      <a href="#motorcycle">BIKE</a>
+      <a href="#games">GAMES</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero">
+      <p>WELCOME TO MY WEBSITE</p>
+      <h1>HIROTO'S PROFILE</h1>
+      <div class="description">
+        Skiing / Snowboarding / Motorcycle / Games
+      </div>
+      <a href="#profile" class="button">自己紹介を見る ↓</a>
+    </div>
+
+    <section id="profile">
+      <div class="section-title">
+        <p>ABOUT ME</p>
+        <h2>プロフィール</h2>
+      </div>
+
+      <div class="profile-box">
+        <p><strong>名前：</strong>ひろと</p>
+        <p><strong>好きなこと：</strong>スキー、スノーボード、バイク、ゲーム</p>
+        <p><strong>好きなゲーム：</strong>ゼルダの伝説 ブレス オブ ザ ワイルド、Apex Legends</p>
+        <p><strong>ひとこと：</strong>自分の好きなことを紹介するサイトです！</p>
+      </div>
+    </section>
+
+    <section id="winter">
+      <div class="section-title">
+        <p>WINTER SPORTS</p>
+        <h2>スキー・スノーボード</h2>
+      </div>
+
+      <div class="hobby-grid">
+        <div class="card">
+          <div class="icon">⛷️</div>
+          <h3>SKIING</h3>
+          <p>
+            雪山を滑る爽快感が魅力のスキー。
+            冬ならではの景色や、ゲレンデで過ごす時間も楽しみのひとつです。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏂</div>
+          <h3>SNOWBOARDING</h3>
+          <p>
+            スノーボードも好きなウィンタースポーツ。
+            雪の上を自由に滑る楽しさを味わえます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="motorcycle">
+      <div class="section-title">
+        <p>MOTORCYCLE</p>
+        <h2>バイク</h2>
+      </div>
+
+      <div class="hobby-grid">
+        <div class="card">
+          <div class="icon">🏍️</div>
+          <h3>MY FAVORITE</h3>
+          <p>
+            バイクの魅力は、かっこいいデザインと走る楽しさ。
+            いろいろなバイクを知って、自分のお気に入りを見つけたいです。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛣️</div>
+          <h3>THE OPEN ROAD</h3>
+          <p>
+            いつかバイクでいろいろな場所を走って、
+            景色や旅を楽しんでみたいです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="games">
+      <div class="section-title">
+        <p>MY FAVORITE GAMES</p>
+        <h2>好きなゲーム</h2>
+      </div>
+
+      <div class="hobby-grid">
+        <div class="card">
+          <div class="icon">🗡️</div>
+          <h3>ゼルダの伝説<br>ブレス オブ ザ ワイルド</h3>
+          <p>
+            広大な世界を自由に冒険できるところが魅力。
+            探索や謎解きなど、さまざまな楽しみ方ができる大好きなゲームです。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎮</div>
+          <h3>Apex Legends</h3>
+          <p>
+            仲間と協力して勝利を目指すバトルロイヤルゲーム。
+            戦略やチームワークが重要なところが魅力です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="message">
+      <h2>THANK YOU FOR VISITING!</h2>
+      <p>最後まで見てくれてありがとうございます！</p>
+      <a href="#" class="button">もう一度見る ↑</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 HIROTO'S PROFILE</p>
+  </footer>
+
+</body>
+</html>
