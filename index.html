@@ -1,21 +1,1432 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<title lang="en">ひろとのウェブサイト - Wikipedia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MEGURO | 日本のモーターサイクル史</title>
+
+<meta name="description" content="1924年に始まったメグロの歴史。目黒製作所の誕生からカワサキとの歩み、現代のMEGUROまでを紹介します。">
+
+<style>
+/* =========================
+   基本設定
+========================= */
+
+:root {
+  --black: #171717;
+  --dark: #222222;
+  --silver: #c9c9c9;
+  --cream: #f3efe6;
+  --gold: #b49a68;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family:
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    Meiryo,
+    sans-serif;
+  color: var(--black);
+  background: var(--cream);
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1080px, 90%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-label {
+  color: #8b754d;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.section-lead {
+  max-width: 700px;
+  color: #555;
+  margin-bottom: 45px;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(23, 23, 23, 0.97);
+  color: var(--white);
+  border-bottom: 1px solid #444;
+}
+
+.header-inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  white-space: nowrap;
+}
+
+.logo span {
+  display: block;
+  font-family: sans-serif;
+  font-size: 9px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  color: var(--silver);
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* =========================
+   メインビジュアル
+========================= */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.60) 55%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2000&q=85")
+    center 55% / cover no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.35),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, 90%);
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.hero-kicker {
+  color: #d4bc8b;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: clamp(54px, 10vw, 110px);
+  line-height: 1;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+
+.hero h1 span {
+  display: block;
+  font-family: sans-serif;
+  font-size: clamp(15px, 2.3vw, 22px);
+  font-weight: normal;
+  letter-spacing: 8px;
+  margin-top: 22px;
+}
+
+.hero-text {
+  max-width: 520px;
+  color: #e5e5e5;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 13px 32px;
+  border: 1px solid #d0b681;
+  color: var(--white);
+  letter-spacing: 2px;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #d0b681;
+  color: var(--black);
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 22px;
+  right: 5%;
+  z-index: 1;
+  font-size: 10px;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   導入
+========================= */
+
+.intro {
+  background: var(--white);
+  text-align: center;
+}
+
+.intro .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-highlight {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.8;
+  margin: 25px 0;
+}
+
+/* =========================
+   年表
+========================= */
+
+.timeline-section {
+  background: #e8e3d9;
+}
+
+.timeline {
+  position: relative;
+  max-width: 850px;
+  margin: 50px auto 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 120px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #b5a88d;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 50px;
+  padding-bottom: 45px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 114px;
+  top: 12px;
+  width: 13px;
+  height: 13px;
+  background: #947a4b;
+  border: 3px solid #e8e3d9;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: bold;
+  color: #80683e;
+  text-align: right;
+}
+
+.timeline-content {
+  padding-left: 0;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #555;
+  font-size: 14px;
+}
+
+.timeline-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border: 1px solid #b8aa8f;
+  padding: 2px 9px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   歴史を深掘り
+========================= */
+
+.history-section {
+  background: var(--black);
+  color: var(--white);
+}
+
+.history-section .section-lead {
+  color: #c6c6c6;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.history-card {
+  border: 1px solid #494949;
+  padding: 32px;
+  transition: 0.3s;
+}
+
+.history-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.history-number {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.history-card h3 {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.history-card p {
+  color: #c7c7c7;
+  font-size: 14px;
+}
+
+/* =========================
+   代表モデル
+========================= */
+
+.models {
+  background: var(--white);
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.model-card {
+  background: #f4f1eb;
+  border-bottom: 3px solid #a18a60;
+}
+
+.model-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.model-body {
+  padding: 23px;
+}
+
+.model-year {
+  color: #8b754d;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.model-card h3 {
+  font-size: 20px;
+  margin: 8px 0 12px;
+}
+
+.model-card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.model-note {
+  font-size: 11px;
+  color: #777;
+  padding: 20px 0 0;
+}
+
+/* =========================
+   メグロとW
+========================= */
+
+.connection {
+  background: #ded8cc;
+}
+
+.connection-box {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.connection-brand {
+  background: var(--black);
+  color: var(--white);
+  padding: 35px 15px;
+}
+
+.connection-brand h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 4vw, 38px);
+  letter-spacing: 3px;
+}
+
+.connection-brand p {
+  font-size: 12px;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+.connection-arrow {
+  font-size: 30px;
+  color: #80683e;
+}
+
+.connection-text {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #4f4b43;
+}
+
+/* =========================
+   現代のメグロ
+========================= */
+
+.modern {
+  background: #f8f6f1;
+}
+
+.modern-panel {
+  background: var(--black);
+  color: var(--white);
+  padding: clamp(28px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.modern-panel h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 4vw, 38px);
+  margin-bottom: 20px;
+}
+
+.modern-panel p {
+  font-size: 14px;
+  color: #d0d0d0;
+  margin-bottom: 15px;
+}
+
+.modern-image {
+  width: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.modern-label {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   メグロの魅力
+========================= */
+
+.values {
+  background: #fff;
+  text-align: center;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.value-item {
+  padding: 25px 15px;
+  border-top: 1px solid #b9a47d;
+}
+
+.value-icon {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  color: #947a4b;
+  margin-bottom: 15px;
+}
+
+.value-item h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.value-item p {
+  color: #666;
+  font-size: 13px;
+}
+
+/* =========================
+   参考資料
+========================= */
+
+.references {
+  background: #e8e3d9;
+}
+
+.reference-list {
+  max-width: 850px;
+}
+
+.reference-list li {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.reference-list a {
+  color: #6e5732;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.reference-list a:hover {
+  color: #171717;
+}
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+  background: #171717;
+  color: #ccc;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  letter-spacing: 5px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #777;
+  padding: 7px 18px;
+  font-size: 11px;
+  transition: 0.3s;
+}
+
+.back-to-top:hover {
+  background: #fff;
+  color: #171717;
+}
+
+/* =========================
+   スマートフォン対応
+========================= */
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+    padding: 14px 0;
+    gap: 12px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    min-height: 580px;
+    background-position: 58% center;
+  }
+
+  .hero h1 {
+    letter-spacing: 2px;
+  }
+
+  .hero h1 span {
+    letter-spacing: 4px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .timeline::before {
+    left: 78px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 60px 1fr;
+    gap: 35px;
+  }
+
+  .timeline-item::before {
+    left: 72px;
+  }
+
+  .timeline-year {
+    font-size: 18px;
+  }
+
+  .history-grid,
+  .model-grid,
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .connection-box {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .connection-arrow {
+    transform: rotate(90deg);
+  }
+
+  .modern-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-image {
+    min-height: 220px;
+  }
+}
+
+/* 動きを減らす設定への対応 */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
 </head>
+
 <body>
-<article>
-<h1 lang="en">ひろとのウェブサイト</h1>
-<p>このサイトはひろとがつくりました</a>
-アプリケーションの一つで、ハイパーテキストを利用してワールド
-ワイドウェブ上で情報を発信するために作られ、
-ワールドワイドウェブの<strong>基幹的役割</strong>をなしている。
-情報を発信するための文書構造を定義するために使われ、
-ある程度機械が理解可能な言語で、
-写真の埋め込みや、フォームの作成、
-ハイパーテキストによるHTML間の連携が可能である。</p>
-</article>
+
+<!-- ヘッダー -->
+
+<header>
+  <div class="header-inner">
+
+    <a href="#top" class="logo">
+      MEGURO
+      <span>MOTORCYCLES</span>
+    </a>
+
+    <nav aria-label="メインメニュー">
+      <a href="#about">メグロとは</a>
+      <a href="#timeline">歴史年表</a>
+      <a href="#models">代表モデル</a>
+      <a href="#kawasaki">カワサキとの関係</a>
+      <a href="#modern">現代のメグロ</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- メインビジュアル -->
+
+<main>
+
+<section class="hero" id="top">
+
+  <div class="hero-content">
+
+    <p class="hero-kicker">
+      THE ORIGINAL ICON SINCE 1924
+    </p>
+
+    <h1>
+      MEGURO
+      <span>日本のモーターサイクル史を彩るブランド</span>
+    </h1>
+
+    <p class="hero-text">
+      1924年に始まったメグロの物語。
+      日本の大型バイクの歴史を切り開いた技術と、
+      時代を超えて受け継がれるクラシックな美しさを紹介します。
+    </p>
+
+    <a href="#about" class="hero-button">
+      メグロの歴史を知る →
+    </a>
+
+  </div>
+
+  <p class="hero-caption">
+    A JOURNEY THROUGH MOTORCYCLE HISTORY
+  </p>
+
+</section>
+
+
+<!-- メグロとは -->
+
+<section class="section intro" id="about">
+
+  <div class="container">
+
+    <p class="section-label">01 / ABOUT MEGURO</p>
+
+    <h2 class="section-title">
+      受け継がれる、ものづくりの精神。
+    </h2>
+
+    <p class="section-lead">
+      メグロは、1924年に創業した目黒製作所から生まれた
+      日本のモーターサイクルブランドです。
+      大排気量・高性能・高品質を追求し、
+      戦前から戦後にかけて日本の二輪車産業の発展を支えました。
+    </p>
+
+    <p class="intro-highlight">
+      その技術と精神は、<br>
+      カワサキのバイクづくりへと受け継がれていきます。
+    </p>
+
+    <p class="section-lead">
+      メグロの歴史をたどることは、
+      日本の大型バイクがどのように発展してきたのかを知ることでもあります。
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- 歴史年表 -->
+
+<section class="section timeline-section" id="timeline">
+
+  <div class="container">
+
+    <p class="section-label">02 / TIMELINE</p>
+
+    <h2 class="section-title">
+      メグロの歴史年表
+    </h2>
+
+    <p class="section-lead">
+      創業から現代まで。
+      メグロの歩みを重要な出来事とともに振り返ります。
+    </p>
+
+    <div class="timeline">
+
+      <article class="timeline-item">
+        <div class="timeline-year">1924</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">FOUNDATION</span>
+          <h3>目黒製作所の創業</h3>
+          <p>
+            東京都内で目黒製作所が創業。
+            当初は変速機の製造などを手がけ、
+            技術力を高めていきました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1932</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">ENGINEERING</span>
+          <h3>自社エンジンの開発</h3>
+          <p>
+            498ccの空冷4ストローク単気筒エンジンを開発し、
+            他の二輪メーカーへの供給を開始。
+            完成車メーカーへの発展につながりました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1937</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">FIRST MOTORCYCLE</span>
+          <h3>初の完成車「Z97型」</h3>
+          <p>
+            メグロ初の完成車であるZ97型を製造。
+            500cc級の本格的なモーターサイクルとして、
+            メグロの歴史を象徴するモデルとなりました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1948</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">RESTART</span>
+          <h3>戦後の生産再開</h3>
+          <p>
+            戦争による困難を乗り越え、
+            二輪車の製造・販売を再開。
+            戦後の日本のモーターサイクル産業の発展を支えます。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1950</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">JUNIOR</span>
+          <h3>ジュニアJ1の登場</h3>
+          <p>
+            248ccエンジンを搭載したジュニアJ1を発売。
+            大型車だけでなく、250ccクラスにも
+            メグロの技術が広がっていきました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1957</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">RACING</span>
+          <h3>浅間火山レースでの活躍</h3>
+          <p>
+            第2回浅間火山レースの500ccクラスで、
+            メグロは1位・2位・4位・5位に入賞。
+            高い技術力を示しました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1960</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">PARTNERSHIP</span>
+          <h3>川崎航空機工業との業務提携</h3>
+          <p>
+            競争が激しくなる二輪車市場の中で、
+            川崎航空機工業との提携を発表。
+            両社の技術が結びつくことになります。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1962</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">NEW ERA</span>
+          <h3>カワサキメグロ製作所へ</h3>
+          <p>
+            両社の関係が深まり、
+            株式会社カワサキメグロ製作所として
+            新たな歩みを始めました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">1965</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">LEGACY</span>
+          <h3>カワサキ500メグロK2</h3>
+          <p>
+            メグロKシリーズの技術を発展させた
+            カワサキ500メグロK2が登場。
+            その流れはカワサキの大型バイクへと続きます。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">2021</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">REVIVAL</span>
+          <h3>MEGURO K3でブランド復活</h3>
+          <p>
+            カワサキからMEGURO K3が登場。
+            メグロの名が半世紀ぶりに現代のモデルに
+            採用され、歴史が再び動き始めました。
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-year">2024</div>
+
+        <div class="timeline-content">
+          <span class="timeline-tag">100TH ANNIVERSARY</span>
+          <h3>創業100周年とMEGURO S1</h3>
+          <p>
+            メグロが創業100周年を迎えた年。
+            伝統的なスタイルを受け継ぐMEGURO S1が登場し、
+            新たな世代へとブランドの魅力を伝えています。
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 歴史を深掘り -->
+
+<section class="section history-section">
+
+  <div class="container">
+
+    <p class="section-label">03 / THE STORY</p>
+
+    <h2 class="section-title">
+      メグロを形づくった、4つの物語。
+    </h2>
+
+    <p class="section-lead">
+      メグロの歴史を知るうえで欠かせない、
+      技術・レース・大型バイク・伝統の継承について紹介します。
+    </p>
+
+    <div class="history-grid">
+
+      <article class="history-card">
+        <div class="history-number">01</div>
+        <h3>変速機メーカーからの出発</h3>
+        <p>
+          メグロは完成車を作る以前から、
+          変速機の製造を通して技術力を磨きました。
+          その後、エンジン開発や完成車の製造へと
+          事業を広げていきます。
+        </p>
+      </article>
+
+      <article class="history-card">
+        <div class="history-number">02</div>
+        <h3>レースで磨かれた技術</h3>
+        <p>
+          メグロはレースにも積極的に参戦しました。
+          競技で得られた経験は、性能や耐久性を追求する
+          バイクづくりに生かされました。
+        </p>
+      </article>
+
+      <article class="history-card">
+        <div class="history-number">03</div>
+        <h3>大型バイクの歴史を切り開く</h3>
+        <p>
+          メグロは当時の日本では珍しかった
+          大排気量スポーツバイクを手がけました。
+          その技術は、カワサキの大型バイクの発展にも
+          つながっていきます。
+        </p>
+      </article>
+
+      <article class="history-card">
+        <div class="history-number">04</div>
+        <h3>時代を超えるブランド</h3>
+        <p>
+          メグロのブランドは現代のカワサキによって復活。
+          伝統的なスタイリングと現代の技術を組み合わせ、
+          新たなファンにも魅力を伝えています。
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 代表モデル -->
+
+<section class="section models" id="models">
+
+  <div class="container">
+
+    <p class="section-label">04 / ICONIC MOTORCYCLES</p>
+
+    <h2 class="section-title">
+      歴史を彩った代表モデル
+    </h2>
+
+    <p class="section-lead">
+      時代ごとの技術とデザインを象徴するモデルを紹介します。
+      写真はモデルの特徴をイメージするための参考画像です。
+    </p>
+
+    <div class="model-grid">
+
+      <article class="model-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80"
+          alt="クラシックなモーターサイクルのイメージ"
+          loading="lazy"
+        >
+
+        <div class="model-body">
+          <p class="model-year">1937</p>
+          <h3>MEGURO Z97</h3>
+          <p>
+            メグロ初の完成車。
+            500ccの単気筒エンジンを搭載し、
+            日本の大型モーターサイクル史に
+            名を残すモデルです。
+          </p>
+        </div>
+
+      </article>
+
+      <article class="model-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80"
+          alt="クラシックなバイクのイメージ"
+          loading="lazy"
+        >
+
+        <div class="model-body">
+          <p class="model-year">1960s</p>
+          <h3>MEGURO Kシリーズ</h3>
+          <p>
+            スタミナK1やカワサキ500メグロK2など、
+            大型2気筒モデルの発展を象徴する系譜。
+            後のカワサキWシリーズにもつながります。
+          </p>
+        </div>
+
+      </article>
+
+      <article class="model-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80"
+          alt="現代のクラシックバイクのイメージ"
+          loading="lazy"
+        >
+
+        <div class="model-body">
+          <p class="model-year">2021 / 2024</p>
+          <h3>MEGURO K3 / S1</h3>
+          <p>
+            現代に復活したメグロブランド。
+            K3は大型2気筒モデル、
+            S1は250ccクラスの単気筒モデルとして
+            それぞれの魅力を持っています。
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+    <p class="model-note">
+      ※写真はイメージです。各車種そのものの写真ではありません。
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- カワサキとの関係 -->
+
+<section class="section connection" id="kawasaki">
+
+  <div class="container">
+
+    <p class="section-label">05 / MEGURO & KAWASAKI</p>
+
+    <h2 class="section-title">
+      メグロからカワサキWへ。
+    </h2>
+
+    <p class="section-lead">
+      メグロの歴史を語るうえで重要なのが、
+      カワサキとの技術的なつながりです。
+    </p>
+
+    <div class="connection-box">
+
+      <div class="connection-brand">
+        <h3>MEGURO</h3>
+        <p>目黒製作所が培った技術と伝統</p>
+      </div>
+
+      <div class="connection-arrow" aria-label="技術の継承">
+        →
+      </div>
+
+      <div class="connection-brand">
+        <h3>KAWASAKI</h3>
+        <p>大型バイクへと受け継がれた技術</p>
+      </div>
+
+    </div>
+
+    <p class="connection-text">
+      1960年に業務提携が発表され、
+      1962年にはカワサキメグロ製作所が発足しました。
+      その後、メグロの技術を引き継いだカワサキ500メグロK2が登場し、
+      さらに650-W1へと発展していきます。
+      メグロは、カワサキの大型モーターサイクルの歴史を語るうえで
+      欠かせない存在なのです。
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- 現代のメグロ -->
+
+<section class="section modern" id="modern">
+
+  <div class="container">
+
+    <p class="section-label">06 / THE LEGACY CONTINUES</p>
+
+    <h2 class="section-title">
+      現代に受け継がれるメグロの魂
+    </h2>
+
+    <p class="section-lead">
+      かつての名門ブランドは、現代のモーターサイクルとして
+      新たな歴史を歩んでいます。
+    </p>
+
+    <div class="modern-panel">
+
+      <div>
+
+        <p class="modern-label">2021 / MEGURO K3</p>
+
+        <h3>伝統と現代技術の融合</h3>
+
+        <p>
+          MEGURO K3は、メグロの歴史に敬意を込めて
+          開発されたクラシックスタイルの大型バイクです。
+          重厚感のあるデザインと現代の技術を組み合わせ、
+          ブランドの伝統を受け継いでいます。
+        </p>
+
+        <p class="modern-label">2024 / MEGURO S1</p>
+
+        <h3>新しい世代へ</h3>
+
+        <p>
+          MEGURO S1は232ccの単気筒エンジンを搭載。
+          かつての250ccクラスのメグロ車を思わせる
+          スタイルを取り入れ、メグロの世界観を
+          より身近なクラスへと広げています。
+        </p>
+
+        <a
+          class="hero-button"
+          href="https://www.kawasaki-motors.com/ja-jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          カワサキ公式サイト →
+        </a>
+
+      </div>
+
+      <div>
+        <img
+          class="modern-image"
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+          alt="クラシックなモーターサイクルのイメージ"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- メグロの魅力 -->
+
+<section class="section values">
+
+  <div class="container">
+
+    <p class="section-label">07 / THE SPIRIT</p>
+
+    <h2 class="section-title">
+      なぜ、メグロは愛され続けるのか。
+    </h2>
+
+    <p class="section-lead">
+      長い歴史の中で受け継がれてきた、
+      メグロならではの魅力を考えてみましょう。
+    </p>
+
+    <div class="value-grid">
+
+      <article class="value-item">
+        <div class="value-icon">01</div>
+        <h3>歴史と伝統</h3>
+        <p>
+          1924年の創業から続く物語。
+          日本のモーターサイクル史を語るうえで
+          欠かせないブランドです。
+        </p>
+      </article>
+
+      <article class="value-item">
+        <div class="value-icon">02</div>
+        <h3>クラシックな美しさ</h3>
+        <p>
+          時代を超えて魅力を放つスタイル。
+          メカニカルな造形と落ち着いた雰囲気が
+          多くの人を惹きつけます。
+        </p>
+      </article>
+
+      <article class="value-item">
+        <div class="value-icon">03</div>
+        <h3>技術の継承</h3>
+        <p>
+          過去の技術と精神が現代のバイクへ。
+          歴史を知ることで、
+          一台のバイクをより深く楽しめます。
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 参考資料 -->
+
+<section class="section references" id="references">
+
+  <div class="container">
+
+    <p class="section-label">08 / REFERENCES</p>
+
+    <h2 class="section-title">
+      参考資料・もっと詳しく知りたい方へ
+    </h2>
+
+    <p class="section-lead">
+      このサイトの歴史解説を作成するにあたり、
+      以下の資料を参考にしています。
+      さらに詳しい情報は、各公式資料をご覧ください。
+    </p>
+
+    <ul class="reference-list">
+
+      <li>
+        <a
+          href="https://answers.khi.co.jp/ja/mobility/20241226j-01/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          川崎重工業「100年前に創業した現存する日本最古の
+          モーターサイクルブランド『メグロ』：前篇」
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.global-kawasaki-motors.com/w_meguro/en/history/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kawasaki Motors「W & MEGURO History」
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.khi.co.jp/pressrelease/detail/meguro_k3.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          川崎重工業「MEGURO K3 新発売」
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.kawasaki-motors.com/ja-jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          カワサキモータースジャパン公式サイト
+        </a>
+      </li>
+
+    </ul>
+
+    <p class="model-note">
+      ※歴史の解説は上記資料をもとに作成した紹介文です。
+      車種の詳細や年式については、公式資料もあわせてご確認ください。
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- フッター -->
+
+<footer>
+
+  <div class="footer-logo">MEGURO</div>
+
+  <p>THE ORIGINAL ICON SINCE 1924</p>
+
+  <p style="margin-top: 15px;">
+    メグロの歴史を、次の時代へ。
+  </p>
+
+  <a href="#top" class="back-to-top">
+    ↑ PAGE TOP
+  </a>
+
+  <p style="margin-top: 25px;">
+    本サイトはメグロの歴史を紹介する非公式の学習・紹介サイトです。
+    川崎重工業およびカワサキモータースジャパンの公式サイトではありません。
+  </p>
+
+</footer>
+
 </body>
 </html>
+```
