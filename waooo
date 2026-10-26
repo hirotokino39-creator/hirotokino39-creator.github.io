@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIROTO'S PROFILE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Arial", "Meiryo", sans-serif;
+      background-color: #101827;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0b1220;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h2 {
+      letter-spacing: 3px;
+      color: #55d6be;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #55d6be;
+    }
+
+    .hero {
+      min-height: 500px;
+      padding: 100px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #102b46, #172033, #263b52);
+    }
+
+    .hero p {
+      color: #55d6be;
+      letter-spacing: 5px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      margin: 15px 0;
+      letter-spacing: 5px;
+    }
+
+    .hero .description {
+      color: #d4dce7;
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 2px solid #55d6be;
+      border-radius: 30px;
+      color: #55d6be;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #55d6be;
+      color: #101827;
+    }
+
+    section {
+      padding: 80px 10%;
+      scroll-margin-top: 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title p {
+      color: #55d6be;
+      letter-spacing: 4px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-top: 5px;
+    }
+
+    .profile-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 35px;
+      background-color: #1b2739;
+      border-radius: 15px;
+      border-left: 5px solid #55d6be;
+    }
+
+    .profile-box p {
+      margin: 10px 0;
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #1b2739;
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid #344258;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #55d6be;
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+      color: #55d6be;
+    }
+
+    .card p {
+      color: #d4dce7;
+      font-size: 15px;
+    }
+
+    #winter {
+      background-color: #142236;
+    }
+
+    #motorcycle {
+      background-color: #101827;
+    }
+
+    #games {
+      background-color: #142236;
+    }
+
+    .message {
+      text-align: center;
+      padding: 90px 
